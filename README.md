@@ -11,11 +11,15 @@ Yup! Progr makes heavy use of the filesystem - where each data object is a file 
 Progr can be easily operated with just a few basic subcommands, though you probably won't even use all of these.
 
 ### Item basics, misc.
-- `progr init` - Initialises a `.progress` folder with blank `.gitkeep`, `default_stage`, and `stages_order` files.
-- `progr list [stages...]` - Lists items in specified stages, or all stages by default.
+- `progr init` - Initialises a `.progress` directory with starter stages (`todo`, `priority`, `done`).
+    - `-b`: Initialises a `.progress` directory with `.gitkeep` files in empty directorys.
+- `progr list [stages...] [options...]` - Lists items in specified stages, or all stages by default.
+    - `-t`: Filters by tag.
 - `progr add <stage> <name>` - Creates a new item at the specified stage (or lowest / default).
 - `progr remove <item>` - Removes the specified item.
 - `progr move <item> <stage>` - Moves specified item to specified stage.
+- `progr info <item> [options]` - Displays or sets information about specified item.
+    - `-s`: Sets the info to the proceeding text.
 - `progr notes` - Displays the note file's contents.
 
 ### Stages
@@ -27,9 +31,9 @@ Progr can be easily operated with just a few basic subcommands, though you proba
 ### Tags
 - `progr addtag <name>` - Creates a new tag.
 - `progr removetag <name>` - Removes the specified tag.
-- `progr tag <item> <tags...>` - Assigns tags to specified item.
-- `progr untag <item> <tags...>` - Removes tags from specified item.
-- `progr taginfo <name> [-s]` - Displays or sets information about specified tag.
+- `progr tag <name> <tags...>` - Assigns tags to specified item.
+- `progr untag <name> <tags...>` - Removes tags from specified item.
+- `progr taginfo <tag> [options...]` - Displays or sets information about the specified tag.
     - `-s`: Sets the info to the proceeding text.
 
 ### Shorthand table
@@ -37,11 +41,12 @@ You may also save a few milliseconds of typing by using the following shorthands
 
 | Subcommand    | Shorthand |
 |---------------|-----------|
-| `init`        | `i`       |
+| `init`        | `I`       |
 | `list`        | `l`       |
 | `add`         | `a`       |
 | `remove`      | `r`       |
 | `move`        | `m`       |
+| `info`        | `i`       |
 | `notes`       | `n`       |
 | `addstage`    | `as`      |
 | `removestage` | `rs`      |
@@ -52,7 +57,6 @@ You may also save a few milliseconds of typing by using the following shorthands
 | `tag`         | `t`       |
 | `untag`       | `u`       |
 | `taginfo`     | `ti`      |
-
 
 *Shorthands can also be found in the manpage, or by running `progr shorthands`.*
 
