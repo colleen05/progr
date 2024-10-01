@@ -92,7 +92,7 @@ Files created and used by Progr use a simple, single-line-per-value layout. Each
 Each line should be an item name.
 
 ### Tags
-*Located in `./progress/`.*
+*Located in `.progress/tags/<name>`.*
 
 Contains a description of the tag.
 
