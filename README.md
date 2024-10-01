@@ -11,7 +11,7 @@ Yup! Progr makes heavy use of the filesystem - where each data object is a file 
 Progr can be easily operated with just a few basic subcommands, though you probably won't even use all of these.
 
 ### Item basics, misc.
-- `progr init` - Initialises a `.progress` directory with starter stages (`todo`, `progress`, `review`, and `done`).
+- `progr init` - Initialises a `.progress` directory with starter stages (`concept`, `todo`, `progress`, `review`, and `done`).
     - `-b`: Initialises a `.progress` directory with `.gitkeep` files in empty directories.
 - `progr list [stages...] [options...]` - Lists items in specified stages, or all stages by default.
     - `-t`: Filters by tag.
