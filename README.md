@@ -29,7 +29,7 @@ Progr can be easily operated with just a few basic subcommands, though you proba
 - `progr removetag <name>` - Removes the specified tag.
 - `progr tag <item> <tags...>` - Assigns tags to specified item.
 - `progr untag <item> <tags...>` - Removes tags from specified item.
-- `progr taginfo <name> [-s]` - Displays or updates information about specified tag.
+- `progr taginfo <name> [-s]` - Displays or sets information about specified tag.
     - `-s`: Sets the info to the proceeding text.
 
 ### Shorthand table
@@ -51,6 +51,8 @@ You may also save a few milliseconds of typing by using the following shorthands
 | `removetag`   | `rt`      |
 | `tag`         | `t`       |
 | `untag`       | `u`       |
+| `taginfo`     | `ti`      |
+
 
 *Shorthands can also be found in the manpage, or by running `progr shorthands`.*
 
