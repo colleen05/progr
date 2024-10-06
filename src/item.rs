@@ -40,6 +40,7 @@ impl Item {
             .unwrap_or_default()
             .split_whitespace()
             .map(|s| s.to_string())
+            .filter(|s| !s.is_empty())
             .collect();
 
         let description: String = lines.collect::<Vec<&str>>().join("\n");
