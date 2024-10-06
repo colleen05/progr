@@ -42,7 +42,7 @@ impl Item {
             .map(|s| s.to_string())
             .collect();
 
-        let description: String = lines.collect();
+        let description: String = lines.collect::<Vec<&str>>().join("\n");
 
         Ok(Item::new(name, tags, &description))
     }
