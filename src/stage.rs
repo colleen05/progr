@@ -62,6 +62,7 @@ impl Stage {
                 .join("\n")
                 .as_bytes(),
         )?;
+        f.write_all("\n".as_bytes())?;
 
         Ok(())
     }
