@@ -1,5 +1,4 @@
 use std::{
-    collections::HashSet,
     fs::{self, File},
     io::{self, Write},
     path::PathBuf,
