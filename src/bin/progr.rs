@@ -5,9 +5,9 @@ use progr::prelude::*;
 fn main() -> io::Result<()> {
     println!("Hello, world!");
 
-    let tag = Tag::open("player");
-
-    println!("{:?}", tag);
+    let ws = Workspace::open()?;
+    println!("{:?}", ws);
+    //ws.write_all()?;
 
     Ok(())
 }

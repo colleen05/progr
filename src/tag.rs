@@ -52,3 +52,8 @@ impl Tag {
         Ok(())
     }
 }
+
+pub fn find_tags() -> Vec<String> {
+    //Vec::new();
+    todo!()
+}

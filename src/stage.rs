@@ -67,3 +67,8 @@ impl Stage {
         Ok(())
     }
 }
+
+pub fn find_stages() -> Vec<String> {
+    //Vec::new();
+    todo!()
+}
