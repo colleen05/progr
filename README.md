@@ -12,7 +12,7 @@ Progr can be easily operated with just a few basic subcommands, though you proba
 
 ### Item basics, misc.
 - `progr init` - Initialises a `.progress` directory with starter stages (`concept`, `todo`, `progress`, `review`, and `done`).
-    - `-b`: Initialises a `.progress` directory with `.gitkeep` files in empty directories.
+    - `-k`: Initialises a `.progress` directory with `.gitkeep` files in empty directories.
 - `progr list [stages...] [options...]` - Lists items in specified stages, or all stages by default.
     - `-t`: Filters by tag.
 - `progr add <stage> <name>` - Creates a new item at the specified stage (or lowest / default).
