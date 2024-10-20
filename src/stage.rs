@@ -5,7 +5,7 @@ use std::{
     path::PathBuf,
 };
 
-use crate::PROGR_PATH_PREFIX;
+use crate::{utils::*, PROGR_PATH_PREFIX};
 
 #[derive(Debug)]
 pub struct Stage {
@@ -69,6 +69,5 @@ impl Stage {
 }
 
 pub fn find_stages() -> Vec<String> {
-    //Vec::new();
-    todo!()
+    find_objects_by_typename("stages").unwrap_or_default()
 }

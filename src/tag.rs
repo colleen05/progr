@@ -4,7 +4,7 @@ use std::{
     path::PathBuf,
 };
 
-use crate::PROGR_PATH_PREFIX;
+use crate::{utils::*, PROGR_PATH_PREFIX};
 
 #[derive(Debug)]
 pub struct Tag {
@@ -54,6 +54,5 @@ impl Tag {
 }
 
 pub fn find_tags() -> Vec<String> {
-    //Vec::new();
-    todo!()
+    find_objects_by_typename("tags").unwrap_or_default()
 }

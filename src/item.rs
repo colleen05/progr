@@ -5,7 +5,7 @@ use std::{
     path::PathBuf,
 };
 
-use crate::PROGR_PATH_PREFIX;
+use crate::{utils::*, PROGR_PATH_PREFIX};
 
 #[derive(Debug)]
 pub struct Item {
@@ -79,6 +79,5 @@ impl Item {
 }
 
 pub fn find_items() -> Vec<String> {
-    //Vec::new();
-    todo!()
+    find_objects_by_typename("items").unwrap_or_default()
 }

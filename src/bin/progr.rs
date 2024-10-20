@@ -1,4 +1,4 @@
-use std::{collections::HashSet, io};
+use std::io;
 
 use progr::prelude::*;
 
@@ -7,7 +7,6 @@ fn main() -> io::Result<()> {
 
     let ws = Workspace::open()?;
     println!("{:?}", ws);
-    //ws.write_all()?;
 
     Ok(())
 }
