@@ -1,4 +1,8 @@
-use std::{fs, io, path::PathBuf};
+use std::{
+    fs::{self, File},
+    io,
+    path::PathBuf,
+};
 
 use crate::{prelude::*, PROGR_PATH_PREFIX};
 
@@ -98,6 +102,34 @@ impl Workspace {
         self.write_default_stage()?;
         self.write_notes()?;
         self.write_stages_order()?;
+        Ok(())
+    }
+
+    pub fn create_missing_directories(&self) -> io::Result<()> {
+        fs::create_dir_all(
+            [".", PROGR_PATH_PREFIX, "items"]
+                .iter()
+                .collect::<PathBuf>(),
+        )?;
+
+        fs::create_dir_all(
+            [".", PROGR_PATH_PREFIX, "stages"]
+                .iter()
+                .collect::<PathBuf>(),
+        )?;
+
+        fs::create_dir_all([".", PROGR_PATH_PREFIX, "tags"].iter().collect::<PathBuf>())?;
+
+        Ok(())
+    }
+
+    pub fn create_gitkeeps(&self) -> io::Result<()> {
+        self.create_missing_directories()?;
+
+        File::create(Item::path_from_name(".gitkeep"))?;
+        File::create(Stage::path_from_name(".gitkeep"))?;
+        File::create(Tag::path_from_name(".gitkeep"))?;
+
         Ok(())
     }
 }
