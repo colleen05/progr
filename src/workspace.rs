@@ -88,7 +88,7 @@ impl Workspace {
     pub fn write_stages_order(&self) -> io::Result<()> {
         let path: PathBuf = [".", PROGR_PATH_PREFIX, "stages_order"].iter().collect();
         fs::create_dir_all(path.parent().unwrap())?;
-        fs::write(path, &self.notes)
+        fs::write(path, self.stages_order.join("\n"))
     }
 
     pub fn write_all(&self) -> io::Result<()> {
