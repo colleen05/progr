@@ -21,5 +21,7 @@ pub fn find_objects_by_typename(typename: &str) -> io::Result<Vec<String>> {
         })
         // Convert to Vec of String (object names).
         .flatten()
+        // Remove hidden files and return
+        .filter(|s| !s.starts_with('.'))
         .collect::<Vec<String>>())
 }
